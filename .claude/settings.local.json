@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mechetron.com)",
+      "Bash(grep \"companyInfo\\\\|site\\\\.\" /c/Users/DELL5420/Downloads/mechtron/components/*.tsx)"
+    ]
+  }
+}

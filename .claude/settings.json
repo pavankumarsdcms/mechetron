@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(python -c ':*)",
+      "Bash(mkdir -p c:/Users/DELL5420/Downloads/mechtron/public/images)",
+      "Bash(cp \"c:/Users/DELL5420/Downloads/mechtron/images/archive/image 1.webp\" \"c:/Users/DELL5420/Downloads/mechtron/public/images/robotics-lab.webp\")",
+      "Bash(cp \"c:/Users/DELL5420/Downloads/mechtron/images/archive/Competition.webp\" \"c:/Users/DELL5420/Downloads/mechtron/public/images/competition.webp\")",
+      "Bash(cp \"c:/Users/DELL5420/Downloads/mechtron/images/archive/aurdino.webp\" \"c:/Users/DELL5420/Downloads/mechtron/public/images/arduino-kit.webp\")",
+      "Bash(cp \"c:/Users/DELL5420/Downloads/mechtron/images/archive/aurdino 2.webp\" \"c:/Users/DELL5420/Downloads/mechtron/public/images/arduino-components.webp\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\DELL5420\\Downloads\\mechtron"
+    ]
+  }
+}

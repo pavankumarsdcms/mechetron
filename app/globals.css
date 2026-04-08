@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── BASE ─────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-white text-brand-body font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Brand spec: H1 = #0F1724 or white on dark, H2 = #1DA5FA, H3 = #0056BE */
+  h1 { @apply text-brand-ink; }
+  h2 { @apply text-brand-accent; }
+  h3 { @apply text-brand-deep; }
+}
+
+/* ─── COMPONENTS ────────────────────────────────────────── */
+@layer components {
+
+  /* Layout */
+  .container-x { @apply mx-auto max-w-content px-5 lg:px-10; }
+
+  /* ── Buttons ─────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn
+           px-6 py-3 font-sans font-medium text-sm
+           transition-all duration-200 select-none;
+  }
+
+  /* Primary — brand gradient CTA */
+  .btn-primary {
+    @apply btn text-white
+           hover:shadow-glow active:scale-[0.98];
+    background: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #0056BE, #1BA4FD);
+  }
+
+  /* Secondary — outline */
+  .btn-outline {
+    @apply btn border-2 border-brand-dark text-brand-dark
+           hover:bg-brand-dark hover:text-white;
+  }
+
+  /* Blue trust button */
+  .btn-blue {
+    @apply btn text-white
+           hover:shadow-glow-blue;
+    background: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  /* Ghost */
+  .btn-ghost {
+    @apply btn text-brand-ink hover:bg-brand-tint;
+  }
+
+  /* Dark (for use on dark backgrounds) */
+  .btn-dark {
+    @apply btn bg-white/10 text-white border border-white/15
+           hover:bg-white/20 backdrop-blur-sm;
+  }
+
+  /* WhatsApp */
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1da851] hover:shadow-[0_0_20px_rgba(37,211,102,0.35)];
+  }
+
+  /* Accent (alias) */
+  .btn-accent { @apply btn-primary; }
+
+  /* ── Cards ─────────────────────────────────────────────── */
+  .card {
+    @apply rounded-card bg-white border border-black/[0.06]
+           shadow-card p-6 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-1.5 hover:shadow-card-hover
+           hover:border-brand-dark/20;
+  }
+
+  /* Glass card — for dark section overlays */
+  .card-glass {
+    @apply rounded-card bg-white/5 border border-white/10
+           backdrop-blur-md p-6 transition-all duration-200;
+  }
+
+  .card-glass-hover {
+    @apply card-glass hover:-translate-y-1.5 hover:bg-white/10
+           hover:border-brand-accent/30 hover:shadow-glow-sm;
+  }
+
+  /* ── Typography helpers ── */
+  .eyebrow {
+    @apply inline-block text-[11px] font-display font-bold uppercase
+           tracking-[0.2em] text-brand-dark;
+  }
+
+  .eyebrow-white {
+    @apply inline-block text-[11px] font-display font-bold uppercase
+           tracking-[0.2em] text-white/50;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-pill
+           bg-brand-tint text-brand-ink px-3 py-1
+           text-xs font-semibold border border-black/[0.06];
+  }
+
+  .badge-brand {
+    @apply inline-flex items-center gap-1.5 rounded-pill
+           bg-brand-dark/10 text-brand-dark px-3 py-1
+           text-xs font-semibold border border-brand-dark/20;
+  }
+
+  .badge-dark {
+    @apply inline-flex items-center gap-1.5 rounded-pill
+           bg-white/10 text-white/70 px-3 py-1
+           text-xs font-semibold border border-white/10
+           backdrop-blur-sm;
+  }
+
+  /* ── Section spacing ── */
+  .section-pad  { @apply py-16 lg:py-24; }
+  .section-alt  { @apply bg-brand-surface; }
+  .section-dark { @apply bg-brand-ink text-white; }
+
+  /* ── Gradient text — brand gradient (blue) ── */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  .gradient-text-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  /* ── Background helpers ── */
+  .gradient-hero {
+    background: linear-gradient(135deg, #0F1724 0%, #0355BC 55%, #0F1724 100%);
+  }
+
+  .gradient-cta {
+    background: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  .grid-bg {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .grid-lines-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .circuit-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ── Futuristic decorative elements ── */
+  .glow-orb {
+    @apply absolute rounded-full blur-[120px] pointer-events-none;
+  }
+
+  /* Neon border — brand blue */
+  .border-neon {
+    @apply border border-brand-dark/30;
+    box-shadow: 0 0 12px rgba(3,85,188,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  /* Glassmorphism panel */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-card;
+  }
+
+  /* ── Interaction helpers ── */
+  .hover-lift { @apply transition-all duration-200 hover:-translate-y-1.5 hover:shadow-card-hover; }
+  .ring-gradient { box-shadow: 0 0 0 3px rgba(3,85,188,0.25); }
+
+  /* ── Separator line ── */
+  .divider {
+    @apply w-12 h-0.5 rounded-full;
+    background: linear-gradient(90deg, #0355BC, #1DA5FA);
+  }
+
+  /* ── Focus states ── */
+  *:focus-visible { @apply outline-2 outline-offset-2 outline-brand-dark; }
+}
+
+/* ─── ANIMATIONS ────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scan-line {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.animate-fade-in-up  { animation: fade-in-up 0.65s ease-out both; }
+.animate-fade-in     { animation: fade-in 0.5s ease-out both; }
+
+.animate-delay-100 { animation-delay: 0.10s; }
+.animate-delay-200 { animation-delay: 0.20s; }
+.animate-delay-300 { animation-delay: 0.30s; }
+.animate-delay-400 { animation-delay: 0.40s; }
+.animate-delay-500 { animation-delay: 0.50s; }
+.animate-delay-600 { animation-delay: 0.60s; }
+
+/* ─── SCROLLBAR — brand blue ────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0F1724; }
+::-webkit-scrollbar-thumb {
+  background: rgba(3,85,188,0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(29,165,250,0.8); }
+
+/* ─── PROSE overrides ────────────────────────────────────── */
+.prose h2 { @apply font-display; }
+.prose h3 { @apply font-display; }
+.prose a  { @apply text-brand-accent; }
