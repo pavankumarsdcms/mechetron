@@ -18,8 +18,6 @@ const config: Config = {
           nav:     "#4F80FF",   // nav links
           link:    "#605BE5",   // hyperlinks
 
-          // Legacy blue aliases (keep so existing components don't break)
-          blue:        "#1DA5FA",
           "blue-light":"#1BA4FD",
 
           // ── DARK BACKGROUNDS ──
@@ -90,7 +88,6 @@ const config: Config = {
       backgroundImage: {
         // Brand gradient: 90deg #0355BC → #1DA5FA
         "gradient-brand":  "linear-gradient(90deg, #0355BC, #1DA5FA)",
-        "gradient-blue":   "linear-gradient(90deg, #0355BC, #1DA5FA)",
         "gradient-blue":   "linear-gradient(90deg, #0355BC, #1DA5FA)",
         "gradient-dark":   "linear-gradient(135deg, #0F1724 0%, #0355BC 60%, #0F1724 100%)",
         "gradient-hero":   "linear-gradient(135deg, #0F1724 0%, #0355BC 55%, #0F1724 100%)",
