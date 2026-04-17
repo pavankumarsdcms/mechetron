@@ -2,11 +2,14 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import TrustStrip from "@/components/TrustStrip";
 import CTABanner from "@/components/CTABanner";
+import Image from "next/image";
 import { stats } from "@/lib/data";
 
 export const metadata = {
-  title: "About Us | Mech-E-Tron Robotics",
-  description: "Learn about Mech-E-Tron's mission to revolutionize STEM education in India. Incubated at OTBI Osmania University, we train engineers of the future.",
+  title: "About Mech-E-Tron | AICRA District Coordinator | STEM Robotics India",
+  description: "Mech-E-Tron is an AICRA District Coordinator, MSME registered, ISO certified STEM robotics education centre in Hyderabad and Chennai. Trained by IAF officers.",
+  keywords: ["about Mech-E-Tron", "AICRA District Coordinator", "STEM robotics India", "IAF drone instructor", "robotics education Hyderabad"],
+  alternates: { canonical: "https://mechetron.com/about" },
 };
 
 export default function AboutPage() {
@@ -24,7 +27,7 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
              <div className="aspect-[4/5] rounded-xl2 overflow-hidden shadow-glow">
-                <img src="/images/classroom.webp" alt="Students building robots" className="object-cover w-full h-full" />
+                <Image src="/images/classroom.webp" alt="Students building robots at Mech-E-Tron lab" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
              </div>
              <div className="absolute -bottom-6 -right-6 glass border-brand-blue/20 p-6 max-w-[200px] shadow-glow-sm">
                 <div className="text-3xl font-display font-bold text-brand-blue mb-1">2026</div>
@@ -32,16 +35,19 @@ export default function AboutPage() {
              </div>
           </div>
           <div>
-            <h2 className="text-4xl font-display font-bold text-brand-ink mb-6">Learn Robotics. Build the Future.</h2>
+            <h2 className="text-4xl font-display font-bold text-brand-ink mb-6">Learn Robotics. Build Skills, Not Just Theory.</h2>
             <div className="prose prose-lg text-brand-muted leading-relaxed space-y-6">
               <p>
-                Founded with a vision to bridge the gap between theoretical education and practical engineering, Mech-E-Tron has become a leading name in STEM education in South India.
+                Founded with a vision to bridge the gap between theoretical education and practical engineering, **Mech-ε-Tron** providing hands-on robotics and STEM education for school and college students across South India.
               </p>
               <p>
-                Based out of the **Osmania Technology Business Incubator (OTBI)** at Osmania University, we operate at the intersection of academia and industry. Our mentors are working engineers who bring real-world challenges into the classroom.
+                Based out of the **Osmania Technology Business Incubator (OTBI)** at Osmania University, we operate at the intersection of academia and industry. Our teaching staff includes experienced engineers and **retired Indian Air Force officers** who specialize in Drone technology and advanced avionics.
               </p>
               <p>
-                Whether it's a 10-year-old student building their first line-following robot or a final-year engineering student designing a complex autonomous drone, we provide the tools, the technology, and the mentorship needed to succeed.
+                We are proud to be an **MSME registered and ISO Certified** organization. As a District Coordinator for **AICRA**, we work towards institutional collaborations to bring international standards of robotics to every classroom.
+              </p>
+              <p>
+                Our students don't just study from books; they build real robots, win National WRC competitions, and develop career-ready skills in AI, IoT, and Embedded Systems.
               </p>
               <div className="flex flex-wrap gap-4 mt-8 pt-8 border-t border-brand-blue/10">
                  {stats.map((s, i) => (
@@ -55,6 +61,19 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
+
+      {/* Affiliations & Certifications */}
+      <section className="py-16 bg-brand-surface border-y border-brand-blue/5">
+        <div className="container-x">
+          <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div className="flex items-center gap-2 font-display font-black text-2xl text-brand-ink">AICRA</div>
+            <div className="flex items-center gap-2 font-display font-black text-2xl text-brand-ink text-blue-600">Skill India</div>
+            <div className="flex items-center gap-2 font-display font-black text-2xl text-brand-ink text-green-600">MSME</div>
+            <div className="flex items-center gap-2 font-display font-black text-2xl text-brand-ink">ISO 9001:2015</div>
+            <div className="flex items-center gap-2 font-display font-black text-2xl text-brand-ink text-orange-600">DGCA</div>
+          </div>
+        </div>
+      </section>
 
       <Section className="bg-brand-ink text-white">
         <div className="text-center max-w-3xl mx-auto mb-16">

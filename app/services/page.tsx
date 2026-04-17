@@ -6,8 +6,10 @@ import CourseCard from "@/components/CourseCard";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata = {
-  title: "Robotics & Prototyping Services | Mech-E-Tron",
-  description: "Professional 3D printing, laser cutting, and custom drone development services in Hyderabad. From prototypes to small-batch production.",
+  title: "3D Printing, Laser Cutting & Custom Drone Services | Mech-E-Tron",
+  description: "Professional 3D printing, laser cutting, custom drone development and final year project support in Hyderabad and Chennai. Call for pricing.",
+  keywords: ["3D printing Hyderabad", "laser cutting service India", "custom drone development", "final year project help ECE", "prototyping service Chennai"],
+  alternates: { canonical: "https://mechetron.com/services" },
 };
 
 export default function ServicesPage() {
@@ -62,16 +64,16 @@ export default function ServicesPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
              <div className="aspect-square rounded-card overflow-hidden relative border border-brand-blue/10">
-                <img src="/images/3d-printing.webp" alt="3D Printing" className="object-cover w-full h-full" />
+                <img src="/images/3d-printing.webp" alt="3D Printing" className="object-cover w-full h-full" loading="lazy" />
              </div>
              <div className="aspect-square rounded-card overflow-hidden relative border border-brand-blue/10 mt-8">
-                <img src="/images/laser-cutting.webp" alt="Laser Cutting" className="object-cover w-full h-full" />
+                <img src="/images/laser-cutting.webp" alt="Laser Cutting" className="object-cover w-full h-full" loading="lazy" />
              </div>
              <div className="aspect-square rounded-card overflow-hidden relative border border-brand-blue/10">
-                <img src="/images/pcb-prototype.webp" alt="PCB Design" className="object-cover w-full h-full" />
+                <img src="/images/pcb-prototype.webp" alt="PCB Design" className="object-cover w-full h-full" loading="lazy" />
              </div>
              <div className="aspect-square rounded-card overflow-hidden relative border border-brand-blue/10 mt-8">
-                <img src="/images/custom-drone.webp" alt="Drone Build" className="object-cover w-full h-full" />
+                <img src="/images/custom-drone.webp" alt="Drone Build" className="object-cover w-full h-full" loading="lazy" />
              </div>
           </div>
         </div>

@@ -46,11 +46,10 @@ const config: Config = {
       },
 
       fontFamily: {
-        // Brand spec: Poppins for headings, Roboto for body, Red Hat Display for hero body
-        display: ["Poppins", "system-ui", "sans-serif"],
-        sans:    ["Roboto", "system-ui", "sans-serif"],
-        hero:    ["'Red Hat Display'", "system-ui", "sans-serif"],
-        mono:    ["'JetBrains Mono'", "monospace"],
+        display: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        sans:    ["var(--font-roboto)", "system-ui", "sans-serif"],
+        hero:    ["var(--font-red-hat)", "system-ui", "sans-serif"],
+        mono:    ["var(--font-jetbrains)", "monospace"],
       },
 
       fontSize: {

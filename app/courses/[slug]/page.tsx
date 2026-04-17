@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import Accordion from "@/components/Accordion";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTABanner from "@/components/CTABanner";
+import CourseEnquiryForm from "@/components/CourseEnquiryForm";
 
 interface Props {
   params: { slug: string };
@@ -14,10 +15,43 @@ export async function generateMetadata({ params }: Props) {
   const course = courses.find((c) => c.slug === params.slug);
   if (!course) return {};
 
+  const cityStr = "Chennai, Hyderabad & Tirupati";
   return {
-    title: `${course.title} | Robotics Course in Hyderabad`,
-    description: course.short,
+    title: `${course.title} | ${cityStr} | Mech-E-Tron`,
+    description: `${course.short} ${course.price} · ${course.duration} · ${course.schedule}. AICRA certified. Available in ${cityStr}. Enroll today.`.slice(0, 160),
+    keywords: [course.title.toLowerCase(), "robotics course India", "STEM training", "AICRA certified course"],
+    alternates: { canonical: `https://mechetron.com/courses/${course.slug}` },
+    openGraph: {
+      title: `${course.title} | ${cityStr} | Mech-E-Tron`,
+      description: course.overview,
+      url: `https://mechetron.com/courses/${course.slug}`,
+    },
   };
+}
+
+function CourseJsonLd({ course }: { course: (typeof courses)[number] }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: course.overview,
+    provider: {
+      "@type": "Organization",
+      name: "Mech-E-Tron",
+      url: "https://mechetron.com",
+    },
+    offers: {
+      "@type": "Offer",
+      price: course.price.replace(/[^\d]/g, ""),
+      priceCurrency: "INR",
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
 }
 
 export default function CourseDetailPage({ params }: Props) {
@@ -26,6 +60,7 @@ export default function CourseDetailPage({ params }: Props) {
 
   return (
     <main>
+      <CourseJsonLd course={course} />
       {/* Breadcrumb & Header */}
       <div className="bg-brand-ink pt-28 pb-16">
         <div className="container-x">
@@ -123,6 +158,8 @@ export default function CourseDetailPage({ params }: Props) {
 
           {/* Right: Outcomes & Sticky Signup */}
           <div className="space-y-8">
+            <CourseEnquiryForm courseName={course.title} />
+
             <div className="card-glass border border-brand-blue/20 bg-brand-blue/[0.02]">
               <h3 className="text-xl font-display font-bold text-brand-ink mb-6">Key Outcomes</h3>
               <ul className="space-y-4">
@@ -133,21 +170,6 @@ export default function CourseDetailPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="card bg-brand-surface border-brand-blue/20 p-6 flex flex-col gap-4">
-              <div className="text-center">
-                <div className="text-brand-muted text-xs uppercase tracking-widest mb-1">Batch Start</div>
-                <div className="text-brand-ink font-bold">Every Weekend</div>
-              </div>
-              <hr className="border-brand-blue/10" />
-              <div className="text-center">
-                <div className="text-brand-muted text-xs uppercase tracking-widest mb-1">Timing</div>
-                <div className="text-brand-ink font-bold">10 AM - 1 PM / 2 PM - 5 PM</div>
-              </div>
-              <a href={`https://wa.me/918148435256`} className="btn-primary w-full justify-center">
-                Contact for Admission
-              </a>
             </div>
           </div>
         </div>

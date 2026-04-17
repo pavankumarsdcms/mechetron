@@ -1,76 +1,89 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { testimonials } from "@/lib/data";
 
-export const metadata = {
-  title: "Testimonials — What Our Students & Schools Say",
-  description:
-    "Real stories from students, parents and school partners about learning robotics and STEM at Mech-E-Tron.",
-};
+const categories = ["All", "Students", "Parents", "Schools"];
 
 export default function TestimonialsPage() {
-  const students = testimonials.filter((t) =>
-    ["Student", "Beginner", "B.Tech", "Engineering"].some((kw) =>
-      t.role.includes(kw)
-    )
-  );
-  const parents = testimonials.filter((t) => t.role.includes("Parent"));
-  const schools = testimonials.filter((t) =>
-    ["School", "Principal"].some((kw) => t.role.includes(kw))
-  );
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const groups = [
-    { label: "Students", items: students.length ? students : testimonials.slice(0, 3) },
-    { label: "Parents", items: parents.length ? parents : [] },
-    { label: "Schools", items: schools.length ? schools : [] },
-  ].filter((g) => g.items.length > 0);
+  const filterTestimonial = (t: any) => {
+    if (activeFilter === "All") return true;
+    if (activeFilter === "Students") return ["Student", "Beginner", "B.Tech", "Engineering"].some(kw => t.role.includes(kw));
+    if (activeFilter === "Parents") return t.role.includes("Parent");
+    if (activeFilter === "Schools") return ["School", "Principal"].some(kw => t.role.includes(kw));
+    return true;
+  };
+
+  const filteredItems = testimonials.filter(filterTestimonial);
 
   return (
-    <>
+    <main>
       {/* Hero */}
-      <section className="relative bg-brand-ink text-white overflow-hidden">
+      <section className="relative bg-brand-ink text-white overflow-hidden pt-28 pb-20">
         <div className="absolute inset-0 grid-bg opacity-40" />
-        <div className="absolute top-0 right-0 h-80 w-80 rounded-full bg-brand-accent/20 blur-[120px]" />
-        <div className="relative container-x py-20 max-w-3xl">
-          <div className="badge-dark">Testimonials</div>
-          <h1 className="mt-4 text-5xl lg:text-6xl font-bold leading-tight">
-            What our <span className="gradient-text">community says.</span>
+        <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-brand-blue/10 blur-[120px]" />
+        <div className="relative container-x max-w-4xl text-center">
+          <div className="badge-dark mb-4">Community Feedback</div>
+          <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight">
+            Loved by <span className="text-brand-blue">Students</span>,<br/>Trusted by <span className="text-brand-orange">Schools</span>
           </h1>
-          <p className="mt-5 text-lg text-white/70">
-            Real stories from students, parents and school partners who have
-            experienced Mech-E-Tron's hands-on learning.
+          <p className="mt-6 text-xl text-white/60 leading-relaxed max-w-2xl mx-auto">
+            See how Mech-E-Tron is transforming STEM education across India through the voices of those who know us best.
           </p>
         </div>
       </section>
 
-      {/* All testimonials grouped */}
-      {groups.map((group) => (
-        <section key={group.label} className="py-16 first:pt-20">
-          <div className="container-x">
-            <div className="eyebrow mb-3">{group.label}</div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {group.items.map((t) => (
-                <div key={t.name} className="card hover-lift flex flex-col">
-                  <div className="flex gap-0.5 text-brand-amber text-lg mb-4">
-                    {"★".repeat(t.rating)}
+      {/* Filter Tabs */}
+      <section className="py-12 bg-white border-b border-black/5 sticky top-20 z-20">
+        <div className="container-x flex justify-center gap-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`px-6 py-2 rounded-pill font-bold transition-all duration-300 text-sm ${
+                activeFilter === cat 
+                  ? "bg-brand-blue text-white shadow-glow-sm" 
+                  : "bg-brand-surface text-brand-muted hover:text-brand-blue border border-brand-blue/5"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Grid */}
+      <section className="py-20 bg-brand-surface min-h-[600px]">
+        <div className="container-x">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredItems.map((t, i) => (
+              <div 
+                key={t.name} 
+                className="card bg-white shadow-card hover:shadow-glow-sm transition-all duration-500 flex flex-col animate-fade-in"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="flex gap-1 text-brand-orange text-sm mb-6">
+                  {"★".repeat(t.rating)}
+                </div>
+                <blockquote className="text-brand-body leading-relaxed flex-1 italic">
+                  "{t.quote}"
+                </blockquote>
+                <div className="mt-8 flex items-center gap-4 pt-6 border-t border-brand-blue/5">
+                  <div className="h-12 w-12 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold text-lg">
+                    {t.name[0]}
                   </div>
-                  <p className="text-sm text-brand-ink/80 leading-relaxed flex-1">
-                    "{t.quote}"
-                  </p>
-                  <div className="mt-6 flex items-center gap-3 pt-4 border-t border-black/5">
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-dark to-brand-accent grid place-items-center text-white text-sm font-bold flex-shrink-0">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm">{t.name}</div>
-                      <div className="text-xs text-brand-ink/55">{t.role}</div>
-                    </div>
+                  <div>
+                    <div className="font-display font-bold text-brand-ink leading-none mb-1">{t.name}</div>
+                    <div className="text-xs text-brand-muted">{t.role}</div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-16 bg-brand-surface">
@@ -84,6 +97,6 @@ export default function TestimonialsPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

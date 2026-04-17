@@ -13,7 +13,10 @@ const partners = [
 
 export default function TrustStrip() {
   return (
-    <section className="py-10 border-y border-white/5 bg-brand-ink/80 overflow-hidden relative">
+    <section
+      className="py-10 border-y border-white/5 bg-brand-ink/80 overflow-hidden relative"
+      aria-label="Trusted partners"
+    >
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
       {/* Fade masks */}
@@ -24,15 +27,19 @@ export default function TrustStrip() {
         Trusted by leading schools &amp; institutions
       </p>
 
-      <div className="flex w-max animate-marquee gap-0">
-        {/* Duplicate for seamless loop */}
-        {[...partners, ...partners].map((name, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 mx-8 whitespace-nowrap"
-          >
-            {/* Logo placeholder — replace with <Image> when real logos available */}
-            <div className="h-8 px-4 rounded border border-white/10 bg-white/5 flex items-center justify-center text-white/40 text-xs font-display font-semibold hover:text-white/70 hover:border-brand-orange/30 transition-colors cursor-default">
+      {/* Single set of logos duplicated once — second set is decorative (aria-hidden) */}
+      <div className="flex w-max animate-marquee gap-0" style={{ willChange: "transform" }}>
+        {partners.map((name) => (
+          <div key={name} className="flex items-center gap-3 mx-8 whitespace-nowrap">
+            <div className="h-8 px-4 rounded border border-white/10 bg-white/5 flex items-center justify-center text-white/40 text-xs font-display font-semibold hover:text-white/70 hover:border-brand-blue/30 transition-colors cursor-default">
+              {name}
+            </div>
+          </div>
+        ))}
+        {/* Duplicate for seamless loop — hidden from assistive tech */}
+        {partners.map((name) => (
+          <div key={`dup-${name}`} className="flex items-center gap-3 mx-8 whitespace-nowrap" aria-hidden="true">
+            <div className="h-8 px-4 rounded border border-white/10 bg-white/5 flex items-center justify-center text-white/40 text-xs font-display font-semibold">
               {name}
             </div>
           </div>

@@ -31,8 +31,8 @@ export default function TestimonialCarousel() {
             key={t.name}
             className={`card transition-all duration-300 flex flex-col ${
               offset === 0
-                ? "border-brand-blue/30 shadow-glow-sm scale-100"
-                : "opacity-60 scale-95 bg-brand-surface"
+                ? "border-brand-blue/30 shadow-glow-sm scale-100 z-10"
+                : "opacity-40 scale-[0.88] bg-brand-surface blur-[0.5px]"
             }`}
           >
             {/* Stars */}

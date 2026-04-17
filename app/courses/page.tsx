@@ -6,8 +6,10 @@ import TrustStrip from "@/components/TrustStrip";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata = {
-  title: "Robotics & STEM Courses in Hyderabad | Mech-E-Tron",
-  description: "Explore our hands-on robotics, Arduino, and drone courses. From beginners to advanced engineering students, learn by building real projects at OTBI, Osmania University.",
+  title: "Robotics & STEM Courses in Chennai, Hyderabad, Tirupati | Mech-E-Tron",
+  description: "Explore hands-on robotics, Arduino, AI & IoT and drone courses for school and college students. Build real projects. AICRA certified. From ₹2,299. Enroll today.",
+  keywords: ["robotics course Chennai", "robotics course Hyderabad", "arduino course India", "STEM training students", "drone workshop India"],
+  alternates: { canonical: "https://mechetron.com/courses" },
 };
 
 export default function CoursesPage() {

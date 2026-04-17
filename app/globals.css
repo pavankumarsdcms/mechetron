@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── SCROLL ANIMATIONS ─────────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+[data-animate][data-delay="100"] { transition-delay: 0.1s; }
+[data-animate][data-delay="200"] { transition-delay: 0.2s; }
+[data-animate][data-delay="300"] { transition-delay: 0.3s; }
+[data-animate][data-delay="400"] { transition-delay: 0.4s; }
+
 /* ─── BASE ─────────────────────────────────────────────── */
 @layer base {
   html { scroll-behavior: smooth; }

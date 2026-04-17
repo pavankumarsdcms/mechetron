@@ -7,12 +7,24 @@ import CourseCard from "@/components/CourseCard";
 import CTABanner from "@/components/CTABanner";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import { courses, services, galleryItems, technologies, whyChoose } from "@/lib/data";
+import { TechCloud } from "@/components/ui/logo-cloud-2";
 
 /* ─── Metadata ─────────────────────────────────────────── */
 export const metadata = {
-  title: "Mech-E-Tron — Hands-On Robotics & STEM Education",
+  title: "Robotics Courses in Chennai & Hyderabad | AICRA Certified | Mech-E-Tron",
   description:
-    "India's premier robotics & STEM education platform. Hands-on training, Arduino courses, drone workshops, school STEM labs, and engineering project support in Hyderabad.",
+    "Hands-on robotics and STEM courses in Chennai, Hyderabad and Tirupati. AICRA certified. Arduino, drones, AI and IoT. Book your free demo today.",
+  keywords: [
+    "robotics course Chennai", "robotics course Hyderabad", "robotics course Tirupati",
+    "arduino training India", "STEM summer camp Chennai", "robotics classes near me",
+    "STEM training school students", "drone training India DGCA", "AICRA robotics",
+  ],
+  openGraph: {
+    title: "Robotics Courses in Chennai & Hyderabad | AICRA Certified | Mech-E-Tron",
+    description: "Hands-on robotics and STEM courses in Chennai, Hyderabad and Tirupati. AICRA certified. Arduino, drones, AI and IoT. Book your free demo today.",
+    url: "https://mechetron.com",
+  },
+  alternates: { canonical: "https://mechetron.com" },
 };
 
 export default function HomePage() {
@@ -23,6 +35,64 @@ export default function HomePage() {
 
       {/* ② Trust Strip */}
       <TrustStrip />
+
+      {/* ②b Summer Camp Highlight */}
+      <section className="py-20 bg-brand-surface relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40%] h-full bg-brand-blue/5 skew-x-12 translate-x-20" />
+        <div className="container-x relative">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="lg:w-1/2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-orange/10 border border-brand-orange/20 px-3 py-1 text-xs font-bold text-brand-orange uppercase tracking-widest mb-4">
+                <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping" />
+                Featured: Summer 2026
+              </div>
+              <h2 className="text-h2 font-display font-bold text-brand-ink mb-6 leading-tight">
+                Robotics Summer Camp<br />
+                <span className="gradient-text">Starts May 1st</span>
+              </h2>
+              <p className="text-brand-body text-lg mb-8 leading-relaxed max-w-xl">
+                The ultimate hands-on robotics experience for students in Chennai, Hyderabad, and Tirupati. Build your own working robot and get certified this summer.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { icon: "🏎️", text: "Build a working robot" },
+                  { icon: "🎓", text: "Get certified" },
+                  { icon: "📍", text: "3 Major Cities" },
+                  { icon: "💰", text: "Just ₹2,299" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-xl">{item.icon}</span>
+                    <span className="font-semibold text-brand-ink">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/summer-camp" className="btn-primary shadow-glow">
+                View Camp Details →
+              </Link>
+            </div>
+            <div className="lg:w-1/2 relative group">
+              <div className="absolute inset-0 bg-brand-blue/10 rounded-card rotate-3 group-hover:rotate-1 transition-transform" />
+              <div className="relative aspect-video rounded-card overflow-hidden border border-brand-blue/10 shadow-xl2">
+                <Image
+                  src="/images/robotics-lab.webp"
+                  alt="Summer Camp Robotics"
+                  fill
+                  sizes="(max-width:1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/40 to-transparent" />
+              </div>
+              {/* Floating element */}
+              <div className="absolute -bottom-6 -right-6 glass p-6 border-brand-blue/20 shadow-glow-sm">
+                <div className="text-brand-blue font-display font-bold text-2xl">40 Seats</div>
+                <div className="text-xs uppercase font-bold text-brand-muted">Per Location</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ③ Programs */}
       <Section
@@ -103,6 +173,8 @@ export default function HomePage() {
                     fill
                     sizes="(max-width:1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 text-white text-xs font-display font-semibold">
@@ -118,7 +190,7 @@ export default function HomePage() {
       </section>
 
       {/* ⑤ For Schools */}
-      <section className="py-20 bg-brand-ink relative overflow-hidden">
+      <section className="py-20 bg-brand-ink relative overflow-hidden" data-animate>
         <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
         <div className="glow-orb w-96 h-96 bg-brand-blue/20 -right-20 top-1/2 -translate-y-1/2" />
         <div className="container-x relative">
@@ -180,7 +252,7 @@ export default function HomePage() {
       </Section>
 
       {/* ⑦ Why Choose Mech-E-Tron */}
-      <section className="py-20 bg-brand-ink relative overflow-hidden">
+      <section className="py-20 bg-brand-ink relative overflow-hidden" data-animate>
         <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
         <div className="glow-orb w-[500px] h-[500px] bg-brand-orange/10 top-0 left-1/2 -translate-x-1/2 pointer-events-none" />
 
@@ -215,34 +287,33 @@ export default function HomePage() {
       </section>
 
       {/* ⑦b Technologies Taught */}
-      <section className="py-20 bg-brand-surface">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      <section className="py-24 bg-white relative overflow-hidden" data-animate>
+        {/* Decorative background for the tech section */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-px bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent" />
+        
+        <div className="container-x relative">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="eyebrow mb-3">Tech Stack</div>
             <h2 className="text-h2 font-display font-bold text-brand-ink">
               Technologies we teach
             </h2>
-            <p className="mt-4 text-brand-muted">
+            <p className="mt-4 text-brand-muted leading-relaxed">
               Industry-relevant tools and languages — from your first Arduino sketch to FPGA design.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {technologies.map((tech) => (
-              <div key={tech.name} className="card-hover p-5 flex flex-col items-center text-center gap-3">
-                <div className="text-3xl">{tech.icon}</div>
-                <div>
-                  <div className="font-display font-semibold text-brand-ink text-sm">{tech.name}</div>
-                  <div className="text-brand-muted text-xs mt-0.5 leading-snug">{tech.desc}</div>
-                </div>
-              </div>
-            ))}
+          <TechCloud items={technologies} />
+          
+          <div className="mt-16 text-center">
+            <p className="text-sm text-brand-muted max-w-lg mx-auto italic">
+              Our curriculum is constantly updated to match global engineering trends and industry demands.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ⑧ Student Gallery preview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" data-animate>
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="eyebrow mb-3">Student Projects</div>

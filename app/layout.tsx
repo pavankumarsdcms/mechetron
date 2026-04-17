@@ -1,34 +1,89 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
+import ScrollAnimator from "@/components/ScrollAnimator";
+import { Poppins, Roboto, Red_Hat_Display, JetBrains_Mono } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
+});
+
+const redHatDisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-red-hat",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Mech-E-Tron — Hands-On Robotics & STEM Education",
+    default: "Robotics Courses in Chennai & Hyderabad | AICRA Certified | Mech-E-Tron",
     template: "%s | Mech-E-Tron",
   },
   description:
-    "Mech-E-Tron is India's premier robotics & STEM education platform — hands-on robotics training, Arduino courses, drone workshops, school STEM labs and engineering project support in Hyderabad.",
+    "Hands-on robotics and STEM courses in Chennai, Hyderabad and Tirupati. AICRA certified. Arduino, drones, AI and IoT. Book your free demo today.",
   keywords: [
-    "robotics training",
-    "STEM education",
-    "Arduino course",
-    "drone workshop",
-    "engineering final year projects",
-    "robotics for schools",
-    "robotics training Hyderabad",
-    "STEM lab setup",
-    "Mech-E-Tron",
+    "robotics course Chennai", "robotics course Hyderabad", "robotics course Tirupati",
+    "arduino training India", "STEM summer camp Chennai", "STEM summer camp Hyderabad",
+    "robotics summer camp 2026", "final year project help", "btech project ECE",
+    "arduino course students", "robotics classes near me", "drone training India DGCA",
+    "world robotics championship India", "AICRA robotics", "Mech-E-Tron",
   ],
+  metadataBase: new URL("https://mechetron.com"),
+  alternates: { canonical: "https://mechetron.com" },
   openGraph: {
     type: "website",
     locale: "en_IN",
     siteName: "Mech-E-Tron",
-    title: "Mech-E-Tron — Hands-On Robotics & STEM Education",
-    description:
-      "Train the next generation of engineers through real robots, real code, and real projects.",
+    title: "Robotics Courses in Chennai & Hyderabad | AICRA Certified | Mech-E-Tron",
+    description: "Hands-on robotics and STEM courses in Chennai, Hyderabad and Tirupati. AICRA certified. Arduino, drones, AI and IoT. Book your free demo today.",
+    images: [
+      {
+        url: "https://mechetron.com/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mech-E-Tron — Hands-On Robotics & STEM Education",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Robotics Courses in Chennai & Hyderabad | Mech-E-Tron",
+    description: "AICRA certified robotics & STEM courses. Arduino, drones, AI & IoT. Book a free demo.",
+    images: ["https://mechetron.com/images/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE",
   },
 };
 
@@ -38,20 +93,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${poppins.variable} ${roboto.variable} ${redHatDisplay.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        {/* Poppins — headings | Roboto — body | Red Hat Display — hero body */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Red+Hat+Display:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-        {/* JSON-LD — Organisation + LocalBusiness */}
+        {/* JSON-LD — LocalBusiness + EducationalOrganization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -59,54 +106,63 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
+                  "@type": ["LocalBusiness", "EducationalOrganization"],
                   "@id": "https://mechetron.com/#org",
                   name: "Mech-E-Tron",
+                  description: "Hands-on robotics and STEM education for school and college students. Arduino courses, drone training, AI and IoT, and final year project support.",
                   url: "https://mechetron.com",
-                  logo: "https://mechetron.com/logo.png",
-                  contactPoint: {
-                    "@type": "ContactPoint",
-                    telephone: "+91-8148435256",
-                    contactType: "customer support",
-                    areaServed: "IN",
-                    availableLanguage: ["English", "Telugu", "Hindi"],
-                  },
+                  logo: "https://mechetron.com/images/logo-mechetron.png",
+                  foundingDate: "2025",
+                  telephone: ["+918148435246", "+918499985383"],
+                  email: "info@mechetron.com",
+                  priceRange: "₹₹",
+                  openingHours: "Mo-Sa 09:00-18:00",
+                  hasCredential: "AICRA District Coordinator",
+                  address: [
+                    {
+                      "@type": "PostalAddress",
+                      streetAddress: "Mahindra World City, Paranur Railway Station",
+                      addressLocality: "Chennai",
+                      addressRegion: "Tamil Nadu",
+                      postalCode: "603002",
+                      addressCountry: "IN",
+                    },
+                    {
+                      "@type": "PostalAddress",
+                      streetAddress: "OTBI, Osmania University, Central Facilities for R&D Building",
+                      addressLocality: "Hyderabad",
+                      addressRegion: "Telangana",
+                      postalCode: "500007",
+                      addressCountry: "IN",
+                    },
+                  ],
+                  geo: { "@type": "GeoCoordinates", latitude: 17.4065, longitude: 78.4772 },
+                  contactPoint: [
+                    { "@type": "ContactPoint", telephone: "+918148435246", contactType: "customer support", areaServed: "IN", availableLanguage: ["English", "Telugu", "Hindi"] },
+                  ],
                   sameAs: [
                     "https://instagram.com/mechetron",
                     "https://youtube.com/@mechetron",
                     "https://twitter.com/mechetron",
                   ],
+                  memberOf: [
+                    { "@type": "Organization", name: "AICRA" },
+                    { "@type": "Organization", name: "Skill India" },
+                    { "@type": "Organization", name: "MSME" },
+                    { "@type": "Organization", name: "Android Robo" },
+                  ],
                 },
                 {
-                  "@type": "LocalBusiness",
-                  "@id": "https://mechetron.com/#local",
-                  name: "Mech-E-Tron",
-                  description:
-                    "India's hands-on robotics & STEM education platform — training the next generation of engineers through real robots, real code, and real projects.",
+                  "@type": "WebSite",
+                  "@id": "https://mechetron.com/#website",
                   url: "https://mechetron.com",
-                  telephone: "+91-8148435256",
-                  email: "info@mechetron.com",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress:
-                      "Osmania Technology Business Incubator (OTBI), Central Facilities for Research & Development Building",
-                    addressLocality: "Hyderabad",
-                    addressRegion: "Telangana",
-                    postalCode: "500007",
-                    addressCountry: "IN",
+                  name: "Mech-E-Tron",
+                  publisher: { "@id": "https://mechetron.com/#org" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://mechetron.com/blog?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
                   },
-                  geo: {
-                    "@type": "GeoCoordinates",
-                    latitude: 17.4065,
-                    longitude: 78.4772,
-                  },
-                  openingHoursSpecification: {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                    opens: "09:00",
-                    closes: "19:00",
-                  },
-                  priceRange: "₹₹",
                 },
               ],
             }),
@@ -122,8 +178,11 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main-content">{children}</main>
+        <Newsletter />
         <Footer />
         <WhatsAppButton />
+        <ScrollToTop />
+        <ScrollAnimator />
       </body>
     </html>
   );

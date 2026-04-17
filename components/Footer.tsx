@@ -1,7 +1,12 @@
+"use client";
 import Link from "next/link";
-import { companyInfo, courses, services } from "@/lib/data";
+import Image from "next/image";
+import { useState } from "react";
+import { companyInfo, courses, navLinks } from "@/lib/data";
 
 export default function Footer() {
+  const [locOpen, setLocOpen] = useState(false);
+
   return (
     <footer className="bg-brand-ink relative overflow-hidden border-t border-white/5">
       {/* Background */}
@@ -17,12 +22,15 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <Link href="/" className="flex items-center gap-2.5 mb-5 group">
-            <div className="h-9 w-9 rounded-tag bg-brand-blue grid place-items-center font-display font-bold text-sm text-white group-hover:shadow-glow-sm transition">
-              M
+            <div className="relative h-14 w-52 -ml-3">
+              <Image
+                src={companyInfo.logoFooter}
+                alt={`${companyInfo.name} Logo`}
+                fill
+                sizes="208px"
+                className="object-contain"
+              />
             </div>
-            <span className="font-display font-bold text-lg text-white">
-              Mech-E-<span className="gradient-text">Tron</span>
-            </span>
           </Link>
           <p className="text-white/40 text-sm leading-relaxed">{companyInfo.tagline}</p>
           <p className="text-white/40 text-sm mt-3 leading-relaxed">
@@ -56,12 +64,7 @@ export default function Footer() {
             Courses
           </h4>
           <ul className="space-y-3 text-sm text-white/40">
-            <li>
-              <Link href="/courses" className="hover:text-brand-blue transition-colors">
-                All Courses
-              </Link>
-            </li>
-            {courses.slice(0, 5).map((c) => (
+            {courses.map((c) => (
               <li key={c.slug}>
                 <Link href={`/courses/${c.slug}`} className="hover:text-brand-blue transition-colors">
                   {c.title}
@@ -69,30 +72,35 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/schools" className="hover:text-brand-blue transition-colors font-semibold">
-                For Schools →
+              <Link href="/summer-camp" className="hover:text-brand-amber transition-colors font-bold text-brand-amber">
+                Summer Camp 2026
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Services & Projects */}
+        {/* Explore */}
         <div>
           <h4 className="font-display font-semibold mb-6 text-white text-sm uppercase tracking-wider">
-            Solutions
-          </h4>
-          <ul className="space-y-3 text-sm text-white/40 mb-8">
-            <li><Link href="/services" className="hover:text-brand-blue transition-colors">Engineering Services</Link></li>
-            <li><Link href="/projects" className="hover:text-brand-blue transition-colors">Student Projects</Link></li>
-            <li><Link href="/products/arduino-uno-learning-board" className="hover:text-brand-blue transition-colors">Shop Hardware</Link></li>
-          </ul>
-          <h4 className="font-display font-semibold mb-4 text-white text-sm uppercase tracking-wider">
             Explore
           </h4>
-          <ul className="space-y-3 text-sm text-white/40">
-            <li><Link href="/about"   className="hover:text-brand-blue transition-colors">Our Story</Link></li>
-            <li><Link href="/gallery" className="hover:text-brand-blue transition-colors">Gallery</Link></li>
-            <li><Link href="/blog"    className="hover:text-brand-blue transition-colors">Blog</Link></li>
+          <ul className="space-y-3 text-sm text-white/40 mb-8">
+            {navLinks.filter(l => !l.children && l.label !== "Home" && l.label !== "Contact us").map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-brand-blue transition-colors">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            <li><Link href="/schools" className="hover:text-brand-blue transition-colors">For Schools</Link></li>
+            <li><Link href="/products/arduino-uno-learning-board" className="hover:text-brand-blue transition-colors">Shop Hardware</Link></li>
+            <li><Link href="/blog" className="hover:text-brand-blue transition-colors">Blog</Link></li>
+            <li className="pt-2">
+              <span className="flex items-center gap-2 text-white/20">
+                Certification
+                <span className="text-[10px] bg-white/5 border border-white/10 px-1.5 py-0.5 rounded leading-none">Soon</span>
+              </span>
+            </li>
           </ul>
         </div>
 
@@ -102,16 +110,42 @@ export default function Footer() {
             Get in Touch
           </h4>
           <div className="space-y-4 text-sm text-white/40">
-            <p className="leading-relaxed">
-              📍 {companyInfo.address.line1},<br />
-              {companyInfo.address.line2},<br />
-              {companyInfo.address.line3}<br />
-              <span className="text-white/25">Pin: {companyInfo.address.pincode}</span>
-            </p>
+            {/* Locations — accordion on mobile */}
+            <div>
+              <button
+                onClick={() => setLocOpen((v) => !v)}
+                className="flex items-center gap-2 w-full text-left md:cursor-default"
+                aria-expanded={locOpen}
+              >
+                <span>📍</span>
+                <span className="text-white/60 font-medium">Hyderabad · Chennai · Tirupati</span>
+                <svg
+                  width="12" height="8" viewBox="0 0 10 6" fill="none"
+                  className={`ml-auto md:hidden transition-transform duration-200 ${locOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                >
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {/* Expanded locations — always visible on md+, accordion on mobile */}
+              <div className={`mt-2 pl-5 space-y-1 overflow-hidden transition-all duration-300 md:block ${locOpen ? "max-h-40" : "max-h-0 md:max-h-none"}`}>
+                {companyInfo.locations.map((loc) => (
+                  <p key={loc.city} className="text-white/25 text-xs leading-snug">
+                    <span className="text-white/40 font-medium">{loc.city}</span> — {loc.address}
+                  </p>
+                ))}
+              </div>
+            </div>
+
             <p>
               📱{" "}
-              <a href={`tel:${companyInfo.phone}`} className="hover:text-brand-blue transition-colors text-white/60 font-medium">
+              <a href={`tel:${companyInfo.phone}`} className="hover:text-brand-blue transition-colors text-white/60 font-medium whitespace-nowrap">
                 {companyInfo.phone}
+              </a>
+              <span className="mx-2 text-white/20">|</span>
+              <a href={`tel:${companyInfo.phone2}`} className="hover:text-brand-blue transition-colors text-white/60 font-medium whitespace-nowrap">
+                {companyInfo.phone2}
               </a>
             </p>
             <p>

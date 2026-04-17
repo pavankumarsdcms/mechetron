@@ -9,11 +9,35 @@ export const metadata = {
   description: "Buy the Mech-E-Tron Arduino UNO Learning Board. A complete kit for 30+ projects with 3 months mentor support. Fast delivery across India.",
 };
 
+function ProductJsonLd({ p }: { p: typeof arduinoProduct }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    description: p.description,
+    image: `https://mechetron.com${p.images[0]}`,
+    offers: {
+      "@type": "Offer",
+      price: p.price.replace(/[^\d]/g, ""),
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: "Mech-E-Tron" },
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export default function ProductPage() {
   const p = arduinoProduct;
 
   return (
     <main>
+      <ProductJsonLd p={p} />
       <div className="bg-brand-ink pt-28 pb-16">
         <div className="container-x">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -25,8 +49,8 @@ export default function ProductPage() {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {p.images.map((img, i) => (
-                  <div key={i} className="aspect-square rounded-xl overflow-hidden border border-white/10 hover:border-brand-blue/50 transition-all cursor-pointer">
-                    <img src={img} alt={`${p.name} detail ${i+1}`} className="w-full h-full object-cover" />
+                  <div key={i} className="aspect-square rounded-xl overflow-hidden border border-white/10 hover:border-brand-blue/50 transition-all cursor-pointer relative">
+                    <Image src={img} alt={`${p.name} detail ${i + 1}`} fill className="object-cover" sizes="33vw" />
                   </div>
                 ))}
               </div>
@@ -64,7 +88,7 @@ export default function ProductPage() {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-8 border-t border-white/10">
-                 <a href={`https://wa.me/${p.whatsappOrder}?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Arduino%20UNO%20Learning%20Board.`} className="btn-primary flex-1 py-4 text-base">
+                 <a href={`https://wa.me/${p.whatsappOrder}?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Arduino%20UNO%20Learning%20Board.`} target="_blank" rel="noopener noreferrer" className="btn-primary flex-1 py-4 text-base">
                     Order via WhatsApp
                  </a>
                  <a href="/contact" className="btn-dark py-4 text-base">

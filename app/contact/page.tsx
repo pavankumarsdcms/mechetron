@@ -4,8 +4,10 @@ import ContactForm from "@/components/ContactForm";
 import { companyInfo } from "@/lib/data";
 
 export const metadata = {
-  title: "Contact Us | Mech-E-Tron Robotics Hyderabad",
-  description: "Visit our robotics lab at OTBI, Osmania University. Contact us for course inquiries, prototyping services, or school partnerships.",
+  title: "Contact Mech-E-Tron | Chennai 603002 | Hyderabad 500007 | Call 8148435246",
+  description: "Reach Mech-E-Tron for robotics course enquiries in Chennai, Hyderabad or Tirupati. Call +91 81484 35246 or WhatsApp. Book a free demo today.",
+  keywords: ["contact Mech-E-Tron", "robotics course enquiry", "Hyderabad robotics lab", "Chennai robotics center", "book robotics demo"],
+  alternates: { canonical: "https://mechetron.com/contact" },
 };
 
 export default function ContactPage() {
@@ -23,28 +25,46 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left: Info */}
           <div>
-            <h2 className="text-3xl font-display font-bold text-brand-ink mb-8">Visit Our Innovation Lab</h2>
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                 <div className="w-12 h-12 rounded-xl bg-brand-surface flex items-center justify-center text-xl border border-brand-blue/10">📍</div>
-                 <div>
-                    <h4 className="font-display font-bold text-brand-ink">Address</h4>
-                    <p className="text-brand-muted mt-1 leading-relaxed">
-                      {address.line1}<br />
-                      {address.line2}<br />
-                      {address.line3}<br />
-                      Pin code: {address.pincode}
-                    </p>
-                 </div>
-              </div>
+            <h2 className="text-3xl font-display font-bold text-brand-ink mb-8">Our Training Centers</h2>
+            <div className="space-y-6">
+              {companyInfo.locations.map((loc) => (
+                <div key={loc.city} className="card-glass-white border border-brand-blue/10 p-6 flex gap-5 group hover:border-brand-blue/30 transition-all">
+                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-xl group-hover:bg-brand-blue/10 transition-colors">📍</div>
+                   <div className="flex-1">
+                      <div className="flex justify-between items-start">
+                         <h4 className="font-display font-bold text-brand-ink">{loc.city} Center</h4>
+                         <span className="text-[10px] font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-2 py-0.5 rounded">Active</span>
+                      </div>
+                      <p className="text-brand-muted mt-2 text-sm leading-relaxed">
+                        {loc.address}<br />
+                        {loc.state} — {loc.pincode}
+                      </p>
+                      <a 
+                        href={`https://maps.google.com/?q=Mech-e-tron+${loc.city}+${loc.address}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue mt-3 hover:underline"
+                      >
+                         <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="mt-0.5">
+                            <path d="M12 2H2v10h10V2zM1 1h12v12H1V1z" fill="currentColor"/>
+                            <path d="M7 4l3 3-3 3-1-1 2-2-2-2 1-1z" fill="currentColor"/>
+                         </svg>
+                         Get Directions
+                      </a>
+                   </div>
+                </div>
+              ))}
+            </div>
 
+            <div className="mt-12 space-y-8">
               <div className="flex gap-4">
                  <div className="w-12 h-12 rounded-xl bg-brand-surface flex items-center justify-center text-xl border border-brand-blue/10">📞</div>
                  <div>
                     <h4 className="font-display font-bold text-brand-ink">Phone & WhatsApp</h4>
-                    <p className="text-brand-muted mt-1">
-                      Main: <a href={`tel:${phone}`} className="text-brand-blue font-semibold hover:underline">{phone}</a><br />
-                      Support: <a href={`https://wa.me/${whatsapp}`} className="text-brand-blue font-semibold hover:underline">WhatsApp Support</a>
+                    <p className="text-brand-muted mt-1 leading-relaxed">
+                      Primary: <a href={`tel:${companyInfo.phone}`} className="text-brand-blue font-semibold hover:underline">{companyInfo.phone}</a><br />
+                      Technical: <a href={`tel:${companyInfo.phone2}`} className="text-brand-blue font-semibold hover:underline">{companyInfo.phone2}</a><br />
+                      Support: <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-brand-blue font-semibold hover:underline">WhatsApp Support</a>
                     </p>
                  </div>
               </div>
@@ -54,25 +74,11 @@ export default function ContactPage() {
                  <div>
                     <h4 className="font-display font-bold text-brand-ink">Email</h4>
                     <p className="text-brand-muted mt-1">
-                      <a href={`mailto:${email}`} className="text-brand-blue font-semibold hover:underline">{email}</a><br />
-                      For Partnerships: <a href="mailto:partners@mechetron.com" className="text-brand-blue font-semibold hover:underline">partners@mechetron.com</a>
+                      <a href={`mailto:${companyInfo.email}`} className="text-brand-blue font-semibold hover:underline">{companyInfo.email}</a><br />
+                      Technical support handled manually within a few hours.
                     </p>
                  </div>
               </div>
-            </div>
-
-            {/* Embed Map Placeholder / Link */}
-            <div className="mt-12 p-1 rounded-xl2 bg-brand-surface border border-brand-blue/10 overflow-hidden">
-               <div className="aspect-video bg-gray-200 flex items-center justify-center relative grayscale hover:grayscale-0 transition-all duration-500">
-                  <p className="text-brand-muted text-sm font-medium z-10">Google Maps Integration</p>
-                  <a 
-                    href="https://maps.google.com/?q=Osmania+Technology+Business+Incubator+Hyderabad" 
-                    target="_blank" 
-                    className="absolute inset-0 z-20"
-                    aria-label="View on Google Maps"
-                  />
-                  <img src="/images/osmania-university.webp" alt="Osmania University OTBI" className="absolute inset-0 w-full h-full object-cover opacity-50" />
-               </div>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-
 Disallow: /api/
+Disallow: /_next/
+Disallow: /not-found
 
 Sitemap: https://mechetron.com/sitemap.xml
