@@ -322,7 +322,7 @@ export const stats = [
 
 /* ── Company Info ──────────────────────────────────────── */
 export const companyInfo = {
-  name: "Mech-ε-Tron",
+  name: "MECH-ε-TRON™",
   logoNavbar: "/images/logo-navbar.png",
   logoFooter: "/images/logo-footer.png",
   tagline: "Build Skills, Not Just Theory.",
@@ -371,31 +371,39 @@ export const companyInfo = {
 
 /* ── Navigation ────────────────────────────────────────── */
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   {
     href: "/courses",
     label: "Courses",
     children: [
-      { href: "/courses/arduino-uno-course",      label: "Arduino UNO",    icon: "⚡", desc: "15 days · ₹2,999" },
-      { href: "/courses/robotics-beginner-course", label: "Robotic",        icon: "🤖", desc: "1 month · ₹3,999" },
-      { href: "/courses/ai-iot-training",          label: "AI & IoT",       icon: "🌐", desc: "2 months · ₹6,999" },
-      { href: "/courses/drone-workshop",           label: "Drone Workshop", icon: "🛸", desc: "2 days · ₹2,500" },
-      { href: "/summer-camp",                      label: "Summer Camp",    icon: "☀️", desc: "15 days · ₹2,299" },
+      { href: "/courses/arduino-uno-course",      label: "Arduino UNO" },
+      { href: "/courses/robotics-beginner-course", label: "Robotics Program" },
+      { href: "/courses/ai-iot-training",          label: "AI & IoT" },
+      { href: "/courses/drone-workshop",           label: "Drone Workshop" },
+      { href: "/summer-camp",                      label: "Summer Camp" },
+      { href: "/stem-modules",                     label: "STEM Modules" },
+      { href: "/wooden-diy",                       label: "Wooden DIY Kits" },
     ],
   },
   {
     href: "/services",
     label: "Services",
     children: [
-      { href: "/services/3d-printing",     label: "3D Printing",         icon: "🖨️", desc: "Rapid prototyping" },
-      { href: "/services/laser-cutting",   label: "Laser Cutting",       icon: "✂️", desc: "Precision cutting" },
-      { href: "/services/custom-drone",    label: "Custom Drone",        icon: "🚁", desc: "UAV development" },
-      { href: "/projects/btech-final-year",label: "Final Year Projects", icon: "🎓", desc: "B.Tech & M.Tech" },
+      { href: "/services/3d-printing",     label: "3D Printing" },
+      { href: "/services/laser-cutting",   label: "Laser Cutting" },
+      { href: "/services/custom-drone",    label: "Custom Drone" },
+      { href: "/projects/btech-final-year",label: "Final Year Projects" },
     ],
   },
-  { href: "/gallery",  label: "Gallery" },
-  { href: "/contact",  label: "Contact" },
+  { href: "/schools", label: "Schools" },
+  {
+    href: "/about",
+    label: "About",
+    children: [
+      { href: "/about",   label: "About Us" },
+      { href: "/gallery", label: "Gallery" },
+    ],
+  },
+  { href: "/contact", label: "Contact" },
 ];
 
 /* ── FAQ Data ──────────────────────────────────────────── */

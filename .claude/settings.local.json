@@ -24,7 +24,17 @@
       "mcp__Claude_in_Chrome__get_page_text",
       "mcp__Claude_in_Chrome__tabs_create_mcp",
       "Bash(curl -s --max-time 15 http://localhost:3003/)",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(node -e \"const p=require\\('C:/Users/DELL5420/Downloads/mechtron/node_modules/next/package.json'\\);console.log\\(p.version\\)\")",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
+      "Bash(python3 -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(cwebp -version)",
+      "Bash(where ffmpeg *)",
+      "Bash(where magick *)",
+      "Bash(node -e \"console.log\\(process.version\\)\")",
+      "Bash(npm install *)",
+      "Bash(grep -E \"\\\\.tsx$|^d\")",
+      "Bash(grep -E \"\\\\.ts$|^d\")"
     ]
   }
 }

@@ -36,6 +36,85 @@ export default function HomePage() {
       {/* ② Trust Strip */}
       <TrustStrip />
 
+      {/* ②a Partners & Alliances Strip */}
+      <section className="py-8 bg-brand-tint border-y border-brand-blue/10">
+        <div className="container-x">
+          <p className="text-center text-[11px] font-display font-bold uppercase tracking-[0.18em] text-brand-muted mb-6">
+            Official Partnerships &amp; Alliances
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14">
+            {/* AICRA */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-brand-blue/30 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/logos/aicra.png"
+                  alt="AICRA — All India Council for Robotics & Automation"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">AICRA<br/>Alliance Partner</span>
+            </div>
+            {/* Android Robo */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-brand-blue/15 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/logos/andriod%20robo.png"
+                  alt="Android Robo — Training Partner"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Android Robo<br/>Training Partner</span>
+            </div>
+            {/* MSME */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-brand-blue/15 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/logos/msme.jpeg"
+                  alt="MSME Registered"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Govt. of India<br/>MSME</span>
+            </div>
+            {/* TechnoXian */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-brand-blue/15 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/logos/worlds%20biggest%20robotics%20championship.jpeg"
+                  alt="Techno Xian"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">World Robotics<br/>Championship</span>
+            </div>
+            {/* Skill India */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-[#f97316]/20 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/logos/Skill-India-Logo.png"
+                  alt="Skill India"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Certified<br/>Partner</span>
+            </div>
+          </div>
+          <p className="text-center text-xs text-brand-muted mt-5 max-w-lg mx-auto leading-relaxed">
+            MECH-ε-TRON™ is an official implementation partner of AICRA — All India Council for Robotics &amp; Automation, operating India STEM Labs across Hyderabad &amp; Secunderabad.
+          </p>
+        </div>
+      </section>
+
       {/* ②b Summer Camp Highlight */}
       <section className="py-20 bg-brand-surface relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40%] h-full bg-brand-blue/5 skew-x-12 translate-x-20" />
@@ -121,6 +200,45 @@ export default function HomePage() {
           </Link>
         </div>
       </Section>
+
+      {/* ③b STEM Modules Teaser */}
+      <section className="py-16 bg-brand-ink relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+        <div className="glow-orb w-96 h-96 bg-brand-blue/15 -top-20 -right-20" />
+        <div className="container-x relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="eyebrow-white mb-3">AICRA Curriculum</div>
+            <h2 className="text-h2 font-display font-bold text-white mb-4">
+              Grade-wise STEM Project Modules
+            </h2>
+            <p className="text-white/55 leading-relaxed mb-6">
+              Official AICRA Curriculum — From Grade 1 to Grade 12. Structured hands-on project modules covering Robotics, IoT, AI, Machine Learning, Drones, 3D Printing, AR/VR, and Industry Automation — designed for schools and inter-colleges.
+            </p>
+
+            {/* Grade badges */}
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              {["Grade 1–2", "Grade 3–4", "Grade 5–6", "Grade 7–8", "Grade 9–10", "Grade 11–12"].map((g) => (
+                <span key={g} className="inline-flex items-center rounded-pill bg-brand-blue/20 text-brand-accent border border-brand-blue/30 px-3 py-1 text-xs font-semibold">
+                  {g}
+                </span>
+              ))}
+            </div>
+
+            {/* Tech badges */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {["Robotics", "IoT", "AI", "ML", "Drones", "3D Printing", "AR/VR", "Industry Automation"].map((t) => (
+                <span key={t} className="inline-flex items-center rounded-pill bg-white/10 text-white/70 border border-white/15 px-3 py-1 text-xs font-medium">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <Link href="/stem-modules" className="btn-primary shadow-glow">
+              Explore All Modules →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ④ Hands-On Learning Showcase */}
       <section className="py-20 bg-brand-surface">
@@ -250,6 +368,38 @@ export default function HomePage() {
           </Link>
         </div>
       </Section>
+
+      {/* ⑥b Wooden DIY Teaser */}
+      <section className="py-16 bg-[#fdf8f2]">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="relative aspect-video rounded-xl2 overflow-hidden border border-amber-200/50 shadow-card bg-amber-50">
+              <Image
+                src="/images/wooden-diy/hero.webp"
+                alt="MechEtron Wooden DIY Adventure Models"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 to-transparent pointer-events-none" />
+            </div>
+            <div>
+              <span className="inline-flex items-center rounded-pill bg-amber-100 text-amber-800 border border-amber-200 px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+                New Product
+              </span>
+              <h2 className="text-3xl font-display font-bold text-brand-ink mb-4">
+                Wooden DIY Adventure Models
+              </h2>
+              <p className="text-brand-muted leading-relaxed mb-6">
+                Premium laser-cut wooden vehicle kits. Build. Learn. Explore.
+              </p>
+              <Link href="/wooden-diy" className="btn-primary shadow-glow-sm">
+                Shop Now →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ⑦ Why Choose Mech-E-Tron */}
       <section className="py-20 bg-brand-ink relative overflow-hidden" data-animate>

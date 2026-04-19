@@ -15,9 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/gallery`,      lastModified: new Date(), priority: 0.6,  changeFrequency: "weekly"  as const },
     { url: `${BASE}/testimonials`, lastModified: new Date(), priority: 0.6,  changeFrequency: "monthly" as const },
     { url: `${BASE}/blog`,         lastModified: new Date(), priority: 0.7,  changeFrequency: "weekly"  as const },
+    { url: `${BASE}/stem-modules`,  lastModified: new Date(), priority: 0.9,  changeFrequency: "monthly" as const },
     { url: `${BASE}/contact`,      lastModified: new Date(), priority: 0.9,  changeFrequency: "yearly"  as const },
     { url: `${BASE}/privacy`,      lastModified: new Date(), priority: 0.2,  changeFrequency: "yearly"  as const },
     { url: `${BASE}/terms`,        lastModified: new Date(), priority: 0.2,  changeFrequency: "yearly"  as const },
+    { url: `${BASE}/wooden-diy`,                         lastModified: new Date(), priority: 0.85, changeFrequency: "monthly" as const },
     { url: `${BASE}/products/arduino-uno-learning-board`, lastModified: new Date(), priority: 0.85, changeFrequency: "monthly" as const },
   ];
 
