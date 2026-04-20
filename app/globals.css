@@ -116,6 +116,12 @@
            hover:border-brand-accent/30 hover:shadow-glow-sm;
   }
 
+  /* Glass card — for light/white backgrounds */
+  .card-glass-white {
+    @apply rounded-card bg-white border border-black/[0.07]
+           shadow-card p-6 transition-all duration-200;
+  }
+
   /* ── Typography helpers ── */
   .eyebrow {
     @apply inline-block text-[11px] font-display font-bold uppercase

@@ -21,6 +21,7 @@ export default function SummerCampForm() {
     setLoading(true);
     try {
       const id = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+      if (!id) throw new Error("Formspree ID not configured");
       const res = await fetch(`https://formspree.io/f/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

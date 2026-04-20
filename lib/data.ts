@@ -323,8 +323,8 @@ export const stats = [
 /* ── Company Info ──────────────────────────────────────── */
 export const companyInfo = {
   name: "MECH-ε-TRON™",
-  logoNavbar: "/images/logo-navbar.png",
-  logoFooter: "/images/logo-footer.png",
+  logoNavbar: "/images/logo_navbar.png",
+  logoFooter: "/images/logo_footer.png",
   tagline: "Build Skills, Not Just Theory.",
   email: "info@mechetron.com",
   phone: "+91 81484 35246",

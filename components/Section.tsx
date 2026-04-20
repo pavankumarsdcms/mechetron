@@ -12,6 +12,7 @@ interface SectionProps {
 export default function Section({
   eyebrow,
   title,
+  id,
   subtitle,
   children,
   center,
@@ -19,7 +20,7 @@ export default function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section className={`py-20 ${dark ? "bg-brand-ink" : ""} ${className}`}>
+    <section id={id} className={`py-20 ${dark ? "bg-brand-ink" : ""} ${className}`}>
       <div className="container-x">
         <div className={center ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}>
           {eyebrow && (

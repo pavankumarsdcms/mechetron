@@ -34,7 +34,9 @@
       "Bash(node -e \"console.log\\(process.version\\)\")",
       "Bash(npm install *)",
       "Bash(grep -E \"\\\\.tsx$|^d\")",
-      "Bash(grep -E \"\\\\.ts$|^d\")"
+      "Bash(grep -E \"\\\\.ts$|^d\")",
+      "Bash(grep -r \"process\\\\.env\\\\.\" /c/Users/DELL5420/Downloads/mechtron --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.js\" ! -path \"*/node_modules/*\" ! -path \"*/.next/*\")",
+      "Bash(xargs grep *)"
     ]
   }
 }

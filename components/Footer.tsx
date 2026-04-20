@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState } from "react";
 import { companyInfo, courses, navLinks } from "@/lib/data";
 
@@ -21,16 +21,13 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="lg:col-span-1">
-          <Link href="/" className="flex items-center gap-2.5 mb-5 group">
-            <div className="relative h-14 w-52 -ml-3">
-              <Image
-                src={companyInfo.logoFooter}
-                alt={`${companyInfo.name} Logo`}
-                fill
-                sizes="208px"
-                className="object-contain"
-              />
-            </div>
+          <Link href="/" className="inline-flex items-center mb-5 group">
+            <img
+              src={companyInfo.logoFooter}
+              alt={`${companyInfo.name} Logo`}
+              style={{ height: '80px', width: 'auto' }}
+              className="object-contain"
+            />
           </Link>
           <p className="text-white/40 text-sm leading-relaxed">{companyInfo.tagline}</p>
           <p className="text-white/40 text-sm mt-3 leading-relaxed">

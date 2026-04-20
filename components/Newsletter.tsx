@@ -10,6 +10,7 @@ export default function Newsletter() {
     setStatus("loading");
     try {
       const id = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+      if (!id) { setStatus("error"); return; }
       const res = await fetch(`https://formspree.io/f/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
