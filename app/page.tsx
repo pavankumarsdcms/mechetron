@@ -108,10 +108,81 @@ export default function HomePage() {
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Certified<br/>Partner</span>
             </div>
+            {/* Abira World */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-20 h-14 bg-white rounded-xl border border-brand-blue/15 shadow-sm flex items-center justify-center overflow-hidden p-2">
+                <Image
+                  src="/images/abira_logo.png"
+                  alt="Abira World"
+                  width={64}
+                  height={44}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Brand Partner<br/>Abira World</span>
+            </div>
           </div>
           <p className="text-center text-xs text-brand-muted mt-5 max-w-lg mx-auto leading-relaxed">
             MECH-ε-TRON™ is an official implementation partner of AICRA — All India Council for Robotics &amp; Automation, operating India STEM Labs across Hyderabad &amp; Secunderabad.
           </p>
+        </div>
+      </section>
+
+      {/* ②aa Recognition & Achievement */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container-x">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="eyebrow mb-3">Industry Recognition</div>
+            <h2 className="text-h2 font-display font-bold text-brand-ink">
+              Excellence acknowledged @ Startup Mahakumbh 2024
+            </h2>
+            <p className="mt-4 text-brand-muted leading-relaxed">
+              We are proud to be recognized at India's largest startup showcase, validation of our commitment to revolutionizing STEM education through hands-on engineering.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-3">
+              <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white p-2 bg-white ring-1 ring-brand-blue/10 group cursor-zoom-in">
+                <Image
+                  src="/images/certificate.jpg"
+                  alt="Startup Dangal Mahakumbh 2024 Certificate of Appreciation"
+                  fill
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/20 to-transparent pointer-events-none" />
+              </div>
+              <p className="text-center text-[10px] text-brand-muted mt-4 font-medium italic">
+                Official Certificate presented by AICRA & Ministry of Electronics & IT (MeitY)
+              </p>
+            </div>
+            <div className="lg:col-span-2 space-y-8">
+              <div className="card-glass-white p-8 border-brand-blue/10">
+                <h3 className="text-xl font-display font-bold text-brand-ink mb-4">Certificate of Appreciation</h3>
+                <p className="text-sm text-brand-body leading-relaxed mb-6">
+                  Presented to <span className="font-bold underline decoration-brand-blue/30 text-brand-ink">Hobbeebob Art & Craft</span> (A Mech-E-Tron Initiative) for outstanding contribution as an exhibitor at <span className="font-bold text-brand-blue">Startup Mahakumbh 4.0</span>. Held at Yashobhoomi, New Delhi, this event brought together the top 1% of Indian innovators.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="px-3 py-2 bg-brand-blue/5 border border-brand-blue/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-brand-blue text-center">
+                    Startup India<br/>Verified
+                  </div>
+                  <div className="px-3 py-2 bg-brand-orange/5 border border-brand-orange/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-brand-orange text-center">
+                    AICRA<br/>Recognized
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-6 p-5 rounded-3xl bg-brand-surface border border-brand-blue/5">
+                <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 flex-shrink-0 animate-pulse">
+                   <Image src="/logos/aicra.png" alt="AICRA" width={48} height={48} className="object-contain" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-brand-muted uppercase mb-1">Affiliation</div>
+                  <div className="text-sm font-semibold text-brand-ink leading-snug">All India Council for Robotics & Automation (AICRA)</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -369,33 +440,129 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ⑥b Wooden DIY Teaser */}
-      <section className="py-16 bg-[#fdf8f2]">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div className="relative aspect-video rounded-xl2 overflow-hidden border border-amber-200/50 shadow-card bg-amber-50">
-              <Image
-                src="/images/wooden-diy/collection.webp"
-                alt="MechEtron Wooden DIY Adventure Models Collection"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 to-transparent pointer-events-none" />
-            </div>
-            <div>
-              <span className="inline-flex items-center rounded-pill bg-amber-100 text-amber-800 border border-amber-200 px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
-                New Product
-              </span>
-              <h2 className="text-3xl font-display font-bold text-brand-ink mb-4">
-                Wooden DIY Adventure Models
+      {/* ⑥c Hobeebob 3D Wooden Kits - The Long Section */}
+      <section className="py-24 bg-[#fdf8f2] relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-[40%] h-full bg-amber-100/30 skew-x-12 translate-x-20 pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="container-x relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <div data-animate>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 border border-amber-200 px-4 py-1.5 text-xs font-bold text-amber-800 uppercase tracking-widest mb-6">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                Hobeebob Original Series
+              </div>
+              <h2 className="text-h2 font-display font-bold text-brand-ink mb-6">
+                3D Wooden Model Kits<br />
+                <span className="text-amber-700">Build · Create · Inspire</span>
               </h2>
-              <p className="text-brand-muted leading-relaxed mb-6">
-                Premium laser-cut wooden vehicle kits. Build. Learn. Explore.
+              <p className="text-brand-muted text-lg mb-8 leading-relaxed">
+                Experience the magic of mechanical engineering with our premium laser-cut wooden vehicle kits. Designed for hobbyists, collectors, and young innovators who love to build with their hands.
               </p>
-              <Link href="/wooden-diy" className="btn-primary shadow-glow-sm">
-                Shop Now →
-              </Link>
+              
+              <div className="grid sm:grid-cols-2 gap-6 mb-10">
+                {[
+                  { icon: "🚫", title: "No Glue Needed", desc: "Precision interlock parts" },
+                  { icon: "🌱", title: "Eco-Friendly", desc: "100% Recyclable natural wood" },
+                  { icon: "🎓", title: "Educational", desc: "Learn mechanical principles" },
+                  { icon: "🧒", title: "All Ages", desc: "Fun for families & hobbyists" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <h4 className="font-bold text-brand-ink text-sm">{item.title}</h4>
+                      <p className="text-brand-muted text-xs">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/wooden-diy" className="btn-primary-amber shadow-glow-amber">
+                  Explore Collection →
+                </Link>
+                <div className="flex items-center gap-3 px-5 py-3 rounded-tag border border-amber-200 bg-white shadow-sm">
+                   <div className="text-xs font-bold text-brand-ink uppercase">Tag Us</div>
+                   <div className="text-amber-700 font-display font-bold text-sm">#HOBEEBOB</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative" data-animate data-delay="200">
+              <div className="absolute inset-0 bg-amber-200/50 rounded-[2.5rem] rotate-3 -z-10" />
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white group">
+                <Image
+                  src="/images/hobeebob-stall.jpg"
+                  alt="Hobeebob Showcase at Startup Mahakumbh 2024"
+                  fill
+                  className="object-cover transition-transform duration-[2s] group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+              {/* Floating stats */}
+              <div className="absolute -bottom-8 -right-8 glass-amber p-6 border-amber-200 shadow-glow-amber-sm backdrop-blur-md">
+                <div className="text-amber-800 font-display font-bold text-2xl">100%</div>
+                <div className="text-[10px] uppercase font-bold text-amber-900/60 leading-tight">Sustainable<br/>Natural Wood</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed Features Grid (Mentioning "all things" from image) */}
+          <div className="grid md:grid-cols-4 gap-8" data-animate data-delay="300">
+            <div className="md:col-span-1 space-y-6">
+               <h4 className="font-display font-bold text-brand-ink text-lg border-b border-amber-200 pb-2 flex items-center gap-2">
+                 <span>🚙</span> The Model Series
+               </h4>
+               <ul className="space-y-4">
+                 {["Adventurer", "Off-Roader", "Defender", "Classic Jeep"].map((m) => (
+                   <li key={m} className="flex items-center gap-3 group">
+                     <span className="w-2 h-2 rounded-full bg-amber-400 group-hover:scale-150 transition-transform" />
+                     <span className="font-semibold text-brand-muted group-hover:text-amber-700 transition-colors uppercase tracking-wider text-xs">{m}</span>
+                   </li>
+                 ))}
+               </ul>
+            </div>
+            
+            <div className="md:col-span-2 bg-white/60 rounded-[2rem] p-8 border border-amber-100 shadow-sm relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-4 opacity-10">
+                 <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.45L18.85 19H5.15L12 5.45z"/></svg>
+               </div>
+               <h4 className="font-display font-bold text-brand-ink text-lg mb-8 text-center uppercase tracking-widest">Four Simple Steps to Build</h4>
+               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                  {[
+                    { step: 1, title: "Pop Out", desc: "Laser-cut pieces" },
+                    { step: 2, title: "Assemble", desc: "Manual interlocking" },
+                    { step: 3, title: "Add Detail", desc: "Functional wheels" },
+                    { step: 4, title: "Complete", desc: "Showcase ready" },
+                  ].map((s) => (
+                    <div key={s.step} className="text-center group">
+                      <div className="relative w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 font-bold flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-600 group-hover:text-white transition-all group-hover:rotate-12">
+                        {s.step}
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-white border border-amber-200 rounded-full" />
+                      </div>
+                      <h5 className="font-bold text-[11px] text-brand-ink uppercase mb-1 tracking-wider">{s.title}</h5>
+                      <p className="text-[10px] text-brand-muted leading-tight">{s.desc}</p>
+                    </div>
+                  ))}
+               </div>
+               <div className="mt-8 pt-6 border-t border-amber-100 text-center">
+                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-[0.2em] animate-pulse">Scan to watch video tutorial</span>
+               </div>
+            </div>
+
+            <div className="md:col-span-1 flex flex-col justify-center text-center p-8 bg-amber-700 rounded-[2rem] text-white shadow-xl hover:rotate-1 transition-transform">
+               <div className="text-5xl mb-6 drop-shadow-lg">🎁</div>
+               <h4 className="font-display font-bold text-xl mb-3 tracking-tight">The Perfect Gift</h4>
+               <p className="text-xs text-white/70 leading-relaxed mb-6">Birthdays · Holidays<br/>Corporate Gifting<br/>Special Occasions</p>
+               <div className="mt-auto pt-6 border-t border-white/20">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-50 mb-3">Build Quality</div>
+                  <div className="flex flex-col gap-2 text-[10px] font-bold italic">
+                    <div className="flex justify-between border-b border-white/10 pb-1"><span>✨ Finish</span><span className="text-amber-300">Smooth</span></div>
+                    <div className="flex justify-between border-b border-white/10 pb-1"><span>🛠️ Cut</span><span className="text-amber-300">Precision</span></div>
+                    <div className="flex justify-between"><span>⌛ Lifetime</span><span className="text-amber-300">Built to last</span></div>
+                  </div>
+               </div>
             </div>
           </div>
         </div>

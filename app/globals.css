@@ -222,6 +222,26 @@
 
   /* ── Focus states ── */
   *:focus-visible { @apply outline-2 outline-offset-2 outline-brand-dark; }
+  /* Amber / Wooden theme components */
+  .btn-primary-amber {
+    @apply btn text-white font-bold transition-all duration-300 active:scale-[0.98];
+    background: linear-gradient(90deg, #b45309, #d97706);
+    box-shadow: 0 4px 14px 0 rgba(180, 83, 9, 0.39);
+  }
+  .btn-primary-amber:hover {
+    @apply shadow-xl -translate-y-0.5;
+    background: linear-gradient(90deg, #92400e, #b45309);
+    box-shadow: 0 6px 20px rgba(180, 83, 9, 0.23);
+  }
+  .glass-amber {
+    @apply bg-white/10 backdrop-blur-xl border border-amber-200/20 rounded-card;
+  }
+  .shadow-glow-amber {
+    box-shadow: 0 10px 40px -10px rgba(180, 83, 9, 0.4);
+  }
+  .shadow-glow-amber-sm {
+    box-shadow: 0 5px 20px -5px rgba(180, 83, 9, 0.3);
+  }
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────────── */
