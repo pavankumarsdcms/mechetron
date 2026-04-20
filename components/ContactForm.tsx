@@ -152,6 +152,7 @@ export default function ContactForm() {
           <option>I am a Student / Parent</option>
           <option>I represent a School</option>
           <option>I am an Engineering Student</option>
+          <option>I am a College Representative</option>
         </select>
       </div>
 

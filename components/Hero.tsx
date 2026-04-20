@@ -34,7 +34,7 @@ const slides = [
     subtext: "Dedicated competition coaching for WRO, RoboLeague, AICRA & Smart India Hackathon. Our students consistently finish on the podium.",
     cta1: { label: "Register Now →", href: "/courses/robotics-competitions" },
     cta2: { label: "View All Courses", href: "/courses" },
-    image: "/images/robotic compititons.jpeg",
+    image: "/images/robotic-competitions.jpeg",
     imageAlt: "Students competing in robotics events",
     imageCaption: "Compete. Win. Repeat.",
     floatLabel: "Competition Prep",
@@ -135,7 +135,7 @@ export default function Hero() {
         style={{ animation: "scan-line 8s linear infinite", top: 0 }}
       />
 
-      <div className="container-x relative py-20 lg:py-28 w-full">
+      <div className="container-x relative py-10 lg:py-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[500px]">
 
           {/* Left: Text */}
@@ -191,9 +191,8 @@ export default function Hero() {
                   key={s.id}
                   onClick={() => goTo(i)}
                   aria-label={`Go to slide ${i + 1}`}
-                  className={`relative h-1.5 rounded-full overflow-hidden transition-all duration-300 ${
-                    i === current ? "w-16 bg-white/20" : "w-4 bg-white/20 hover:bg-white/40"
-                  }`}
+                  className={`relative h-1.5 rounded-full overflow-hidden transition-all duration-300 ${i === current ? "w-16 bg-white/20" : "w-4 bg-white/20 hover:bg-white/40"
+                    }`}
                 >
                   {i === current && (
                     <span
@@ -237,8 +236,8 @@ export default function Hero() {
           </div>
 
           {/* Right: Visual — only render image when slide has been loaded */}
-          <div className="relative animate-fade-in-up animate-delay-300 h-full flex items-center">
-            <div className="relative w-full aspect-[4/3] rounded-xl2 overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(3,85,188,0.20)]">
+          <div className="relative animate-fade-in-up animate-delay-300 flex items-center ">
+            <div className=" relative w-full aspect-[4/3] rounded-xl2 overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(3,85,188,0.20)]">
               {slides.map((s, i) => (
                 loaded.has(i) ? (
                   <Image
@@ -261,15 +260,16 @@ export default function Hero() {
             </div>
 
             {/* Floating card */}
-            <div className="absolute -bottom-5 -left-5 glass border-neon p-4 min-w-[190px] animate-float shadow-glow-sm">
-              <div className="eyebrow-white mb-1">{slide.floatLabel}</div>
-              <p className="font-display font-semibold text-white text-sm leading-snug">{slide.floatTitle}</p>
-              <p className="text-white/40 text-xs mt-0.5">{slide.floatSub}</p>
-              <p className="text-brand-accent font-bold text-sm mt-1.5">{slide.floatValue}</p>
+            <div className="absolute -bottom-6 -left-6 z-20 glass border-neon p-4 min-w-[200px] animate-float shadow-glow-sm">
+              <div className="eyebrow-white mb-1.5">{slide.floatLabel}</div>
+              <p className="font-display font-semibold text-white text-[15px] leading-tight">{slide.floatTitle}</p>
+              <p className="text-white/40 text-[10px] mt-1 uppercase tracking-wider">{slide.floatSub}</p>
+              <p className="text-brand-accent font-bold text-[15px] mt-2">{slide.floatValue}</p>
             </div>
 
             {/* Top badge */}
-            <div className="absolute -top-3 -right-3 badge-brand animate-fade-in-up animate-delay-500 shadow-glow-sm">
+            <div className="absolute -top-6 -right-4 z-20 text-white px-4 py-2 rounded-full font-bold text-xs shadow-glow-sm animate-fade-in-up animate-delay-500 border border-white/20 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               {slide.topBadge}
             </div>
 

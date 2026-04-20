@@ -7,6 +7,19 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTABanner from "@/components/CTABanner";
 import CourseEnquiryForm from "@/components/CourseEnquiryForm";
 
+/* Arduino UNO course real photos */
+const arduinoGallery = [
+  { src: "/images/arduino-images/arduino-1.jpeg", alt: "Arduino UNO hands-on session" },
+  { src: "/images/arduino-images/arduino-2.jpeg", alt: "Students building Arduino projects" },
+  { src: "/images/arduino-images/arduino-3.jpeg", alt: "Circuit assembly on breadboard" },
+  { src: "/images/arduino-images/arduino-4.jpeg", alt: "Sensor integration exercise" },
+  { src: "/images/arduino-images/arduino-5.jpeg", alt: "Motor control project" },
+  { src: "/images/arduino-images/arduino-6.jpeg", alt: "Arduino coding session" },
+  { src: "/images/arduino-images/arduino-7.jpeg", alt: "Complete Arduino kit components" },
+  { src: "/images/arduino-images/arduino-8.jpeg", alt: "Students programming microcontroller" },
+  { src: "/images/arduino-images/arduino-9.jpeg", alt: "Final project showcase" },
+];
+
 interface Props {
   params: { slug: string };
 }
@@ -174,6 +187,45 @@ export default function CourseDetailPage({ params }: Props) {
           </div>
         </div>
       </Section>
+
+      {/* Photo Gallery — shown only for Arduino UNO course */}
+      {course.slug === "arduino-uno-course" && (
+        <section className="pb-20 bg-[#f9fafb]">
+          <div className="container-x">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 rounded-pill bg-brand-blue/10 border border-brand-blue/20 px-3 py-1 text-xs font-semibold text-brand-blue uppercase tracking-wider mb-4">
+                Inside the Lab
+              </div>
+              <h2 className="text-3xl font-display font-bold text-brand-ink">See What You'll Build</h2>
+              <p className="mt-3 text-brand-muted">Real photos from our Arduino UNO course sessions — built by students just like you.</p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+              {arduinoGallery.map((img, i) => (
+                <div
+                  key={i}
+                  className={`relative overflow-hidden rounded-xl border border-brand-blue/10 shadow-sm group bg-white ${
+                    i === 0 ? "col-span-2 sm:col-span-2 row-span-2" : ""
+                  }`}
+                  style={{ aspectRatio: i === 0 ? "16/9" : "4/3" }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-white text-xs font-semibold">{img.alt}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <Section className="bg-brand-surface" title="Course FAQs">

@@ -375,8 +375,8 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="relative aspect-video rounded-xl2 overflow-hidden border border-amber-200/50 shadow-card bg-amber-50">
               <Image
-                src="/images/wooden-diy/hero.webp"
-                alt="MechEtron Wooden DIY Adventure Models"
+                src="/images/wooden-diy/collection.webp"
+                alt="MechEtron Wooden DIY Adventure Models Collection"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

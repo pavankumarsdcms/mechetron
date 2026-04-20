@@ -77,23 +77,27 @@ export default function WoodenDiyPage() {
             <h2 className="text-3xl font-display font-bold text-brand-ink mb-4">
               Our Models Range
             </h2>
-            <p className="text-brand-muted">Explore our current collection of wooden DIY vehicles.</p>
+            <p className="text-brand-muted">Explore our current collection of wooden DIY vehicles — <span className="font-semibold text-amber-700">all at Intermediate level</span>. RC Model coming soon!</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {wd.models.map((model) => (
-              <div key={model.id} className="card p-0 overflow-hidden border-brand-blue/10 flex flex-col h-full bg-white transition-transform hover:-translate-y-1 hover:shadow-card">
+              <div key={model.id} className={`card p-0 overflow-hidden flex flex-col h-full bg-white transition-transform hover:-translate-y-1 hover:shadow-card ${(model as any).comingSoon ? "border-amber-300/60" : "border-brand-blue/10"}`}>
                 <div className="relative aspect-video bg-amber-50 border-b border-brand-blue/5">
                   <Image
                     src={model.image}
                     alt={model.name}
                     fill
-                    className="object-cover"
+                    className={(model as any).comingSoon ? "object-cover opacity-60 blur-[1px]" : "object-cover"}
                   />
-                  <div className="absolute inset-0 bg-amber-900/5 items-center justify-center flex -z-10">
-                    <span className="text-amber-800/20 font-bold text-xl">{model.name}</span>
-                  </div>
+                  {/* Coming Soon overlay */}
+                  {(model as any).comingSoon && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-amber-900/50 z-10">
+                      <span className="text-white font-display font-bold text-lg mb-1">🚀 Coming Soon</span>
+                      <span className="text-white/80 text-xs font-semibold uppercase tracking-widest">Future Scope</span>
+                    </div>
+                  )}
                   {model.badge && (
-                    <div className="absolute top-4 right-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                    <div className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20 ${(model as any).comingSoon ? "bg-amber-500 text-white" : "bg-brand-blue text-white"}`}>
                       {model.badge}
                     </div>
                   )}
@@ -102,7 +106,7 @@ export default function WoodenDiyPage() {
                   <h3 className="text-xl font-display font-bold text-brand-ink mb-1">{model.name}</h3>
                   <p className="text-sm text-brand-blue font-semibold mb-3">{model.tagline}</p>
                   <p className="text-sm text-brand-muted mb-6 flex-grow">{model.description}</p>
-                  
+
                   <div className="flex items-center justify-between border-t border-brand-blue/5 pt-4 mt-auto">
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-brand-muted">Difficulty:</span>
@@ -110,9 +114,15 @@ export default function WoodenDiyPage() {
                         {model.difficulty}
                       </span>
                     </div>
-                    <Link href="/contact" className="text-sm font-semibold text-brand-blue hover:text-brand-ink transition-colors">
-                      Enquire →
-                    </Link>
+                    {(model as any).comingSoon ? (
+                      <Link href="/contact" className="text-sm font-semibold text-amber-600 hover:text-amber-800 transition-colors">
+                        Notify Me →
+                      </Link>
+                    ) : (
+                      <Link href="/contact" className="text-sm font-semibold text-brand-blue hover:text-brand-ink transition-colors">
+                        Enquire →
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
