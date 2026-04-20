@@ -54,7 +54,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">AICRA<br/>Alliance Partner</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">AICRA<br />Alliance Partner</span>
             </div>
             {/* Android Robo */}
             <div className="flex flex-col items-center gap-2">
@@ -67,7 +67,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Android Robo<br/>Training Partner</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Android Robo<br />Training Partner</span>
             </div>
             {/* MSME */}
             <div className="flex flex-col items-center gap-2">
@@ -80,7 +80,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Govt. of India<br/>MSME</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Govt. of India<br />MSME</span>
             </div>
             {/* TechnoXian */}
             <div className="flex flex-col items-center gap-2">
@@ -93,7 +93,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">World Robotics<br/>Championship</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">World Robotics<br />Championship</span>
             </div>
             {/* Skill India */}
             <div className="flex flex-col items-center gap-2">
@@ -106,7 +106,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Certified<br/>Partner</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Certified<br />Partner</span>
             </div>
             {/* Abira World */}
             <div className="flex flex-col items-center gap-2">
@@ -119,7 +119,7 @@ export default function HomePage() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Brand Partner<br/>Abira World</span>
+              <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Brand Partner<br />Abira World</span>
             </div>
           </div>
           <p className="text-center text-xs text-brand-muted mt-5 max-w-lg mx-auto leading-relaxed">
@@ -165,16 +165,16 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="px-3 py-2 bg-brand-blue/5 border border-brand-blue/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-brand-blue text-center">
-                    Startup India<br/>Verified
+                    Startup India<br />Verified
                   </div>
                   <div className="px-3 py-2 bg-brand-orange/5 border border-brand-orange/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-brand-orange text-center">
-                    AICRA<br/>Recognized
+                    AICRA<br />Recognized
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-6 p-5 rounded-3xl bg-brand-surface border border-brand-blue/5">
                 <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 flex-shrink-0 animate-pulse">
-                   <Image src="/logos/aicra.png" alt="AICRA" width={48} height={48} className="object-contain" />
+                  <Image src="/logos/aicra.png" alt="AICRA" width={48} height={48} className="object-contain" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-brand-muted uppercase mb-1">Affiliation</div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                   <li key={item} className="flex items-start gap-3 text-sm text-brand-body">
                     <span className="w-5 h-5 rounded-full bg-brand-orange/10 border border-brand-orange/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4l3 3 5-6" stroke="#FF6A00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4l3 3 5-6" stroke="#FF6A00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
                     {item}
@@ -460,7 +460,7 @@ export default function HomePage() {
               <p className="text-brand-muted text-lg mb-8 leading-relaxed">
                 Experience the magic of mechanical engineering with our premium laser-cut wooden vehicle kits. Designed for hobbyists, collectors, and young innovators who love to build with their hands.
               </p>
-              
+
               <div className="grid sm:grid-cols-2 gap-6 mb-10">
                 {[
                   { icon: "🚫", title: "No Glue Needed", desc: "Precision interlock parts" },
@@ -483,8 +483,8 @@ export default function HomePage() {
                   Explore Collection →
                 </Link>
                 <div className="flex items-center gap-3 px-5 py-3 rounded-tag border border-amber-200 bg-white shadow-sm">
-                   <div className="text-xs font-bold text-brand-ink uppercase">Tag Us</div>
-                   <div className="text-amber-700 font-display font-bold text-sm">#HOBEEBOB</div>
+                  <div className="text-xs font-bold text-brand-ink uppercase">Tag Us</div>
+                  <div className="text-amber-700 font-display font-bold text-sm">#HOBEEBOB</div>
                 </div>
               </div>
             </div>
@@ -503,13 +503,13 @@ export default function HomePage() {
               {/* Floating stats */}
               <div className="absolute -bottom-8 -right-8 glass-amber p-6 border-amber-200 shadow-glow-amber-sm backdrop-blur-md">
                 <div className="text-amber-800 font-display font-bold text-2xl">100%</div>
-                <div className="text-[10px] uppercase font-bold text-amber-900/60 leading-tight">Sustainable<br/>Natural Wood</div>
+                <div className="text-[10px] uppercase font-bold text-amber-900/60 leading-tight">Sustainable<br />Natural Wood</div>
               </div>
             </div>
           </div>
 
           {/* Detailed Features Grid (Mentioning "all things" from image) */}
-          <div className="grid md:grid-cols-4 gap-8" data-animate data-delay="300">
+          {/* <div className="grid md:grid-cols-4 gap-8" data-animate data-delay="300">
             <div className="md:col-span-1 space-y-6">
                <h4 className="font-display font-bold text-brand-ink text-lg border-b border-amber-200 pb-2 flex items-center gap-2">
                  <span>🚙</span> The Model Series
@@ -564,7 +564,7 @@ export default function HomePage() {
                   </div>
                </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -607,7 +607,7 @@ export default function HomePage() {
       <section className="py-24 bg-white relative overflow-hidden" data-animate>
         {/* Decorative background for the tech section */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-px bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent" />
-        
+
         <div className="container-x relative">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="eyebrow mb-3">Tech Stack</div>
@@ -620,7 +620,7 @@ export default function HomePage() {
           </div>
 
           <TechCloud items={technologies} />
-          
+
           <div className="mt-16 text-center">
             <p className="text-sm text-brand-muted max-w-lg mx-auto italic">
               Our curriculum is constantly updated to match global engineering trends and industry demands.
