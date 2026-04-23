@@ -34,7 +34,7 @@ export default function HomePage() {
       <Hero />
 
       {/* ② Trust Strip */}
-      <TrustStrip />
+      {/* <TrustStrip /> */}
 
       {/* ②a Partners & Alliances Strip */}
       <section className="py-8 bg-brand-tint border-y border-brand-blue/10">
