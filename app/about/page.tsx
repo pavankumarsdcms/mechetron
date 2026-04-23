@@ -163,7 +163,7 @@ export default function AboutPage() {
                 src="/images/robotics-lab.webp"
                 alt="Students learning robotics at Mech-E-Tron lab"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>

@@ -44,13 +44,13 @@ export default function ProductPage() {
             {/* Left: Images */}
             <div className="space-y-6">
               <div className="relative aspect-square rounded-xl2 overflow-hidden border border-white/10 shadow-glow">
-                <Image src={p.images[0]} alt={p.name} fill className="object-cover" priority />
+                <Image src={p.images[0]} alt={p.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority />
                 <div className="absolute top-4 right-4 badge-brand uppercase">{p.badge}</div>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {p.images.map((img, i) => (
                   <div key={i} className="aspect-square rounded-xl overflow-hidden border border-white/10 hover:border-brand-blue/50 transition-all cursor-pointer relative">
-                    <Image src={img} alt={`${p.name} detail ${i + 1}`} fill className="object-cover" sizes="33vw" />
+                    <Image src={img} alt={`${p.name} detail ${i + 1}`} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                 ))}
               </div>

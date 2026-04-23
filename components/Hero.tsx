@@ -245,7 +245,7 @@ export default function Hero() {
                     src={s.image}
                     alt={s.imageAlt}
                     fill
-                    sizes="(max-width:1024px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className={`object-cover transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
                     priority={i === 0}
                   />

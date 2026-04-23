@@ -51,7 +51,7 @@ export default function HomePage() {
                   alt="AICRA — All India Council for Robotics & Automation"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">AICRA<br />Alliance Partner</span>
@@ -64,7 +64,7 @@ export default function HomePage() {
                   alt="Android Robo — Training Partner"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Android Robo<br />Training Partner</span>
@@ -77,7 +77,7 @@ export default function HomePage() {
                   alt="MSME Registered"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Govt. of India<br />MSME</span>
@@ -90,7 +90,7 @@ export default function HomePage() {
                   alt="Techno Xian"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">World Robotics<br />Championship</span>
@@ -103,7 +103,7 @@ export default function HomePage() {
                   alt="Skill India"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Certified<br />Partner</span>
@@ -116,7 +116,7 @@ export default function HomePage() {
                   alt="Abira World"
                   width={64}
                   height={44}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <span className="text-[10px] font-semibold text-brand-muted text-center leading-tight">Brand Partner<br />Abira World</span>
@@ -148,6 +148,7 @@ export default function HomePage() {
                   src="/images/certificate.jpg"
                   alt="Startup Dangal Mahakumbh 2024 Certificate of Appreciation"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-contain transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
@@ -227,7 +228,7 @@ export default function HomePage() {
                   src="/images/robotics-lab.webp"
                   alt="Summer Camp Robotics"
                   fill
-                  sizes="(max-width:1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
@@ -360,7 +361,7 @@ export default function HomePage() {
                     src={b.img}
                     alt={b.label}
                     fill
-                    sizes="(max-width:1024px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
@@ -496,6 +497,7 @@ export default function HomePage() {
                   src="/images/hobeebob-stall.jpg"
                   alt="Hobeebob Showcase at Startup Mahakumbh 2024"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -645,7 +647,7 @@ export default function HomePage() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 via-transparent to-transparent" />

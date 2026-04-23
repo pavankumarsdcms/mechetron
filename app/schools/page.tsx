@@ -48,7 +48,7 @@ export default function SchoolsPage() {
           </div>
           <div className="relative">
              <div className="aspect-square rounded-xl2 overflow-hidden border border-brand-blue/10 shadow-glow">
-                <Image src="/images/stem-school.webp" alt="School Robotics Lab setup by Mech-E-Tron" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src="/images/stem-school.webp" alt="School Robotics Lab setup by Mech-E-Tron" fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
              </div>
              <div className="absolute -top-6 -left-6 bg-brand-blue text-white p-6 rounded-xl shadow-glow">
                 <div className="text-3xl font-display font-bold">120+</div>

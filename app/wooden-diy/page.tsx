@@ -14,6 +14,7 @@ export default function WoodenDiyPage() {
             src="/images/wooden-diy/hero.webp"
             alt="Wooden DIY Models Background"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover opacity-10"
           />
         </div>
@@ -87,6 +88,7 @@ export default function WoodenDiyPage() {
                     src={model.image}
                     alt={model.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className={(model as any).comingSoon ? "object-cover opacity-60 blur-[1px]" : "object-cover"}
                   />
                   {/* Coming Soon overlay */}
@@ -168,6 +170,7 @@ export default function WoodenDiyPage() {
                 src="/images/wooden-diy/assembly.webp"
                 alt="Assembly Process"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover z-10"
               />
               <span className="text-amber-800/30 font-display font-bold text-2xl px-8 text-center absolute">
@@ -213,6 +216,7 @@ export default function WoodenDiyPage() {
                 src={`/images/wooden-diy/${img}`}
                 alt="Gallery preview"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110 z-10"
               />
               <div className="absolute inset-0 flex items-center justify-center text-xs text-amber-800/30 font-medium">
