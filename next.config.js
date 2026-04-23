@@ -36,7 +36,7 @@ module.exports = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              process.env.NODE_ENV === "development" ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com" : "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com https://tagmanager.google.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.google.co.in",
